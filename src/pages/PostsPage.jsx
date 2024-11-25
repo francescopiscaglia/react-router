@@ -19,9 +19,9 @@ const endpointApi = "/posts";
 
 
 export default function PostsPage() {
-    const [formData, setFormData] = useState(initialFormData);
 
     // logic
+    const [formData, setFormData] = useState(initialFormData);
     const [posts, setPosts] = useState([]);
     const [checkedValue, setCheckedValue] = useState([]);
 
@@ -117,7 +117,7 @@ export default function PostsPage() {
     };
 
 
-
+    // render
     return (
         <main>
             <div className="container">
@@ -132,5 +132,5 @@ export default function PostsPage() {
                 <PostsList posts={posts} apiUrl={apiUrl} handleDeleteClick={handleDeleteClick} />
             </div>
         </main>
-    )
-}
+    );
+};

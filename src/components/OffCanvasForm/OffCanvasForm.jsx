@@ -1,3 +1,11 @@
+import TitleInput from "./FormInput/TitleInput";
+import ImageInput from "./FormInput/ImageInput";
+import ContentInput from "./FormInput/ContentInput";
+import CategoryInput from "./FormInput/CategoryInput";
+import TagsInput from "./FormInput/TagsInput";
+import Submit from "./FormInput/Submit";
+
+
 export default function OffCanvasForm({ handleFormSubmit, formData, handleFormField, handleCheckForm, checkedValue }) {
     // logic
 
@@ -23,111 +31,24 @@ export default function OffCanvasForm({ handleFormSubmit, formData, handleFormFi
                 <form onSubmit={handleFormSubmit}>
 
                     {/* title */}
-                    <div className="mb-3">
-                        <label htmlFor="title" className="form-label">Title</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            name="title"
-                            id="title"
-                            aria-describedby="titleHelpers"
-                            placeholder="Dolce fatto in casa"
-                            value={formData.title}
-                            onChange={handleFormField}
-                            required
-                        />
-                        <small id="titleHelper" className="form-text text-muted">Type the title of your post</small>
-                    </div>
+                    <TitleInput formData={formData} handleFormField={handleFormField} />
 
                     {/* image */}
-                    <div className="mb-3">
-                        <label htmlFor="image" className="form-label">Image</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            name="image"
-                            id="image"
-                            aria-describedby="imageHelpers"
-                            placeholder="https://picsum.photos/600/400"
-                            value={formData.image}
-                            onChange={handleFormField}
-                            required
-                        />
-                        <small id="imageHelper" className="form-text text-muted">Add the image of your post</small>
-                    </div>
+                    <ImageInput formData={formData} handleFormField={handleFormField} />
 
                     {/* content */}
-                    <div className="mb-3">
-                        <label htmlFor="content" className="form-label">Content</label>
-                        <textarea
-                            type="text"
-                            className="form-control"
-                            name="content"
-                            id="content"
-                            aria-describedby="contentHelpers"
-                            placeholder="Add your post content"
-                            value={formData.content}
-                            onChange={handleFormField}
-                        />
-                        <small id="imageHelper" className="form-text text-muted">Add the content of your post</small>
-                    </div>
+                    <ContentInput formData={formData} handleFormField={handleFormField} />
+
 
                     {/* category */}
-                    <div className="mb-3">
-                        <label htmlFor="slug" className="form-label">Category</label>
-                        <select
-                            className="form-select"
-                            aria-label="Default select example"
-                            name="slug"
-                            id="slug"
-                            placeholder="Select a category"
-                            value={formData.slug}
-                            onChange={handleFormField}
-                        >
-                            <option value="">Select a category</option>
-                            <option value="Dolci" >Dolci</option>
-                            <option value="Torte" >Torte</option>
-                            <option value="Ricette vegetariane" >Ricette vegetariane</option>
-                            <option value="Ricette al forno" >Ricette al forno</option>
-                            <option value="Antipasti" >Antipasti</option>
-                            <option value="Primi piatti" >Primi piatti</option>
-                            <option value="Ricette veloci" >Ricette veloci</option>
-                        </select>
-                        <small id="imageHelper" className="form-text text-muted">Select the category</small>
-                    </div>
+                    <CategoryInput formData={formData} handleFormField={handleFormField} />
+
 
                     {/* tags */}
-                    <div className="mb-3">
-                        <label htmlFor="tags" className="form-label">Tags</label>
-
-                        {avaibleTags.map((tag, index) => {
-                            return (
-
-                                <div className="form-check" key={index}>
-                                    <input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        value={tag}
-                                        id=""
-                                        name='tags'
-                                        onChange={handleCheckForm}
-                                        checked={checkedValue.includes(tag)} // controlla se il tag è presente nell'array checkedValue
-                                    />
-                                    <label className="form-check-label" htmlFor="flexCheckDefault">
-                                        {tag}
-                                    </label>
-                                </div>
-                            )
-                        })}
-                    </div>
+                    <TagsInput avaibleTags={avaibleTags} handleCheckForm={handleCheckForm} checkedValue={checkedValue} />
 
                     {/* submit */}
-                    <button
-                        type="submit"
-                        className="btn btn-dark mt-4"
-                    >
-                        Save
-                    </button>
+                    <Submit />
                 </form>
             </div>
         </>
