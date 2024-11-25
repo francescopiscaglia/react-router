@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import OffCanvasForm from "../components/OffCanvasForm/OffCanvasForm";
+import PostsList from "../components/Posts/PostsList";
 
 // i dati iniziali del formo
 const initialFormData = {
@@ -10,7 +11,6 @@ const initialFormData = {
     tags: [],
     isPublished: true,
 };
-
 
 
 // API
@@ -129,62 +129,7 @@ export default function PostsPage() {
                 <OffCanvasForm handleFormSubmit={handleFormSubmit} formData={formData} handleFormField={handleFormField} handleCheckForm={handleCheckForm} checkedValue={checkedValue} />
 
 
-
-
-
-
-                {/* posts */}
-                <div className="row row-cols-1 row-cols-md-2 row-cols-xlg-3 g-4">
-
-                    {posts ?
-                        posts.map(post => {
-                            return (
-                                <div className="col" key={post.id}>
-
-                                    <div className="card rounded-3" style={{ minHeight: "450px" }}>
-                                        <img
-                                            src={post.image.startsWith("http") ? post.image : `${apiUrl}${post.image}`} //se l'url inizia con http non aggiungere nulla, altrimenti aggiungi l'url dell'api
-                                            alt=""
-                                            className='card-img-top'
-                                        />
-
-                                        <div className="card-body">
-
-                                            {/* title */}
-                                            <h4 className='card-title'>{post.title}</h4>
-                                            {/* content */}
-                                            <p className='card-text'>{post.content}.</p>
-                                            {/* category */}
-                                            <p className='card-subtitle mb-2 text-body-secondary'>{post.slug.charAt(0).toUpperCase() + post.slug.slice(1)}</p>
-
-                                            {/* tags */}
-                                            {post.tags.map((tag, index) => {
-                                                return (
-                                                    <a
-                                                        key={index}
-                                                        href=''
-                                                        className='card-link me-2'
-                                                    >{tag}</a>
-                                                )
-                                            })}
-
-                                            {/* button */}
-                                            <div className="call-to-action my-2">
-                                                <button
-                                                    className='btn btn-outline-danger'
-                                                    onClick={handleDeleteClick}
-                                                    data-index={post.title}
-                                                ><i className="bi bi-trash3"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-                        }) :
-
-                        <p>Data non avaible</p>
-                    }
-                </div>
+                <PostsList posts={posts} apiUrl={apiUrl} handleDeleteClick={handleDeleteClick} />
             </div>
         </main>
     )
