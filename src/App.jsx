@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react'
-import { Link, NavLink } from 'react-router-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
-import AppHeader from './components/AppHeader';
-import AppMain from './components/AppMain';
+import DefaultLayout from './pages/DefaultLayout';
+import HomePage from './pages/HomePage';
 
 
 function App() {
@@ -11,9 +9,20 @@ function App() {
   // render
   return (
     <>
-      <AppHeader />
 
-      <AppMain />
+      <BrowserRouter>
+
+        <Routes>
+
+          <Route element={<DefaultLayout />}>
+            <Route path='/' element={<HomePage />}></Route>
+            <Route path='/about'></Route>
+            <Route path='/posts'></Route>
+          </Route>
+
+        </Routes>
+
+      </BrowserRouter>
     </>
   );
 };
