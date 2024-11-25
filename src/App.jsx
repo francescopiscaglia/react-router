@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { Link, NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 
 // i dati iniziali del formo
@@ -122,15 +124,30 @@ function App() {
   // render
   return (
     <>
-      <div className="container">
-        <div className="d-flex justify-content-between align-items-center">
-
-          <h1>Form</h1>
-
-          <button className="btn btn-primary btn-lg my-3" type="button" popovertarget="off-canvas-form">
-            Add
-          </button>
+      <nav className="navbar navbar-expand-lg bg-primary w-100" data-bs-theme="dark">
+        <div className="container-fluid">
+          <a className="navbar-brand">My Blog</a>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/home">Home</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/about">About us</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/posts">Posts</a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+
+      <div className="container">
+
+        <button className="btn btn-primary btn-lg my-3" type="button" popovertarget="off-canvas-form">
+          Add post
+        </button>
 
 
         {/* Off-canvas form */}
