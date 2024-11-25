@@ -8,8 +8,26 @@ img {
     max-width: 100%;
 }
 
+.container {
+    margin-bottom: 1.5rem;
+}
+
 .card {
     a {
         text-decoration: none;
     }
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: .75rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
 }

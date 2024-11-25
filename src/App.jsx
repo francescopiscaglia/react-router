@@ -13,17 +13,15 @@ function App() {
     <>
 
       <BrowserRouter>
-
         <Routes>
 
           <Route element={<DefaultLayout />}>
             <Route path='/' element={<HomePage />}></Route>
             <Route path='/posts' element={<PostsPage />}></Route>
             <Route path='/about' element={<AboutPage />}></Route>
+
           </Route>
-
         </Routes>
-
       </BrowserRouter>
     </>
   );
