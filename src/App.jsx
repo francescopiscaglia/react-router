@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 import DefaultLayout from './pages/DefaultLayout';
 import HomePage from './pages/HomePage';
+import PostsPage from './pages/PostsPage';
+import AboutPage from './pages/AboutPage';
 
 
 function App() {
@@ -16,8 +18,8 @@ function App() {
 
           <Route element={<DefaultLayout />}>
             <Route path='/' element={<HomePage />}></Route>
-            <Route path='/about'></Route>
-            <Route path='/posts'></Route>
+            <Route path='/posts' element={<PostsPage />}></Route>
+            <Route path='/about' element={<AboutPage />}></Route>
           </Route>
 
         </Routes>
