@@ -14,7 +14,7 @@ export default function () {
                             <NavLink to="/posts" className="nav-link" >Posts</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/about" className="nav-link">About us</NavLink>
+                            <NavLink to="/about" className="nav-link">About</NavLink>
                         </li>
                     </ul>
                 </div>
