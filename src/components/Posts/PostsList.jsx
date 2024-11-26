@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function PostsList({ posts, apiUrl, handleDeleteClick }) {
     return (
         <>
@@ -10,11 +12,14 @@ export default function PostsList({ posts, apiUrl, handleDeleteClick }) {
                             <div className="col" key={post.id}>
 
                                 <div className="card rounded-3" style={{ minHeight: "450px" }}>
-                                    <img
-                                        src={post.image.startsWith("http") ? post.image : `${apiUrl}${post.image}`} //se l'url inizia con http non aggiungere nulla, altrimenti aggiungi l'url dell'api
-                                        alt=""
-                                        className='card-img-top'
-                                    />
+
+                                    <Link to={`/posts/${post.name}`}>
+                                        <img
+                                            src={post.image.startsWith("http") ? post.image : `${apiUrl}${post.image}`} //se l'url inizia con http non aggiungere nulla, altrimenti aggiungi l'url dell'api
+                                            alt=""
+                                            className='card-img-top'
+                                        />
+                                    </Link>
 
                                     <div className="card-body">
 

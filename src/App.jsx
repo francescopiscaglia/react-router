@@ -4,6 +4,7 @@ import DefaultLayout from './pages/DefaultLayout';
 import HomePage from './pages/HomePage';
 import PostsPage from './pages/PostsPage';
 import AboutPage from './pages/AboutPage';
+import PostPage from './pages/PostPage';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path='/' element={<HomePage />}></Route>
             <Route path='/posts' element={<PostsPage />}></Route>
             <Route path='/about' element={<AboutPage />}></Route>
+            <Route path='/posts/:slug' element={<PostPage />}></Route>
 
           </Route>
         </Routes>

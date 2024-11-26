@@ -43,7 +43,6 @@ export default function OffCanvasForm({ handleFormSubmit, formData, handleFormFi
                     {/* category */}
                     <CategoryInput formData={formData} handleFormField={handleFormField} />
 
-
                     {/* tags */}
                     <TagsInput avaibleTags={avaibleTags} handleCheckForm={handleCheckForm} checkedValue={checkedValue} />
 
