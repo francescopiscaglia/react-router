@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function PostPage() {
     const [post, setPost] = useState({});
-    const { slug } = useParams()
-    const navigate = useNavigate()
+    const { slug } = useParams();
+    const navigate = useNavigate();
     const url = `http://localhost:3001/posts/${slug}`;
 
     useEffect(
@@ -26,7 +26,8 @@ export default function PostPage() {
                 })
                 .catch(error => console.error(error))
         }, []
-    )
+    );
+
 
     return (
         <>
@@ -53,8 +54,6 @@ export default function PostPage() {
                             </div>
 
                         </div>
-
-
                     </div>
                 </div>
             </div>

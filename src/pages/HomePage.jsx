@@ -1,9 +1,21 @@
+import { Link } from "react-router-dom";
+
 export default function HomePage() {
     return (
         <>
-            <h1>Il mio blog</h1>
+            <div className="p-5 mb-4 bg-light rounded-3">
+                <div className="container-fluid py-5">
+                    <h1 className="display-5 fw-bold">Welcome to my amazing blog 👋🏼</h1>
+                    <p className="col-md-8 fs-4">
+                        Enjoy
+                    </p>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nostrum dolores omnis laudantium molestiae voluptas, eveniet exercitationem inventore. Dolor voluptates, atque ratione consectetur debitis nulla odio perferendis laborum voluptate excepturi!</p>
+                    <Link to={"/posts"} className="btn btn-primary">
+                        See my post
+                    </Link>
+                </div>
+            </div>
+
         </>
 
     );
