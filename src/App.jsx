@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import PostsPage from './pages/PostsPage';
 import AboutPage from './pages/AboutPage';
 import PostPage from './pages/PostPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path='/posts' element={<PostsPage />}></Route>
             <Route path='/about' element={<AboutPage />}></Route>
             <Route path='/posts/:slug' element={<PostPage />}></Route>
+            <Route path='*' element={<NotFoundPage />}></Route>
 
           </Route>
         </Routes>

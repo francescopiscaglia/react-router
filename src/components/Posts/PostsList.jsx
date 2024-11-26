@@ -13,7 +13,7 @@ export default function PostsList({ posts, apiUrl, handleDeleteClick }) {
 
                                 <div className="card rounded-3" style={{ minHeight: "450px" }}>
 
-                                    <Link to={`/posts/${post.name}`}>
+                                    <Link to={`/posts/${post.slug}`}>
                                         <img
                                             src={post.image.startsWith("http") ? post.image : `${apiUrl}${post.image}`} //se l'url inizia con http non aggiungere nulla, altrimenti aggiungi l'url dell'api
                                             alt=""
